@@ -1,8 +1,6 @@
 ---
-import Navbar from '../components/Navbar.astro'
 import ProfileActionButtons from '../components/ProfileActionButtons.astro'
 import ProfileInfo from '../components/ProfileInfo.astro'
-import Footer from '../components/Footer.astro'
 import TabButtons from '../components/TabButtons.astro'
 
 interface Props {
@@ -29,7 +27,6 @@ const { title } = Astro.props
     />
   </head>
   <body class='bg-light'>
-    <!-- <Navbar /> -->
     <main class='mx-auto md:max-w-3xl'>
       <ProfileInfo />
       <ProfileActionButtons />
@@ -38,6 +35,5 @@ const { title } = Astro.props
         <slot />
       </section>
     </main>
-    <!-- <Footer /> -->
   </body>
 </html>
