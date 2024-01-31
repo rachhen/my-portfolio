@@ -1,11 +1,25 @@
 ---
-import Logo from '../components/Logo.astro'
+import { getCollection } from 'astro:content'
+import ProjectCard from '../components/ProjectCard.astro'
 import Layout from '../layouts/Layout.astro'
+
+const projects = await getCollection('projects')
 ---
 
-<Layout title='Welcome to Astro.'>
-  <main>
-    <Logo />
-    <h1 class='text-3xl font-bold'>Hi</h1>
-  </main>
+<Layout title='Rachhen'>
+  <div class='grid gap-5 md:grid-cols-2'>
+    {
+      projects.map((item) => (
+        <ProjectCard
+          href={item.data.canonicalURL ?? '#'}
+          title={item.data.title}
+          imageUrl={item.data.imageUrl}
+          tags={item.data.tags}
+        />
+      ))
+    }
+  </div>
+  <!-- <div class='flex items-center justify-center'>
+    <Button>Load more</Button>
+  </div> -->
 </Layout>

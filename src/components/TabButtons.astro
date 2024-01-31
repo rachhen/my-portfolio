@@ -1,0 +1,29 @@
+---
+const isPortfolio = Astro.url.pathname === '/'
+const isAbout = Astro.url.pathname === '/about'
+---
+
+<div class='m-5 flex flex-row justify-between gap-3 rounded-lg bg-white p-3'>
+  <a
+    href='/'
+    class:list={[
+      'flex flex-1 justify-center rounded-lg p-3 font-medium text-primary',
+      {
+        'bg-light': isPortfolio
+      }
+    ]}
+  >
+    Portfolio
+  </a>
+  <a
+    href='/about'
+    class:list={[
+      'flex flex-1 justify-center rounded-lg p-3 font-medium text-primary',
+      {
+        'bg-light': isAbout
+      }
+    ]}
+  >
+    About
+  </a>
+</div>

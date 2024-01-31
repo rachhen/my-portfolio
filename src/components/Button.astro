@@ -1,0 +1,17 @@
+---
+import type { HTMLAttributes } from 'astro/types'
+
+interface Props extends HTMLAttributes<'button'> {}
+
+const { class: className, ...props } = Astro.props
+---
+
+<button
+  {...props}
+  class:list={[
+    'rounded-lg bg-primary px-5 py-2 font-medium text-white',
+    className
+  ]}
+>
+  <slot />
+</button>
