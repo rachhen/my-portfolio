@@ -1,29 +1,31 @@
----
-const isPortfolio = Astro.url.pathname === '/'
-const isAbout = Astro.url.pathname === '/about'
----
-
 <div class='m-5 flex flex-row justify-between gap-3 rounded-lg bg-white p-3'>
   <a
     href='/'
-    class:list={[
-      'flex flex-1 justify-center rounded-lg p-3 font-medium text-primary',
-      {
-        'bg-light': isPortfolio
-      }
-    ]}
+    class='flex flex-1 justify-center rounded-lg p-3 font-medium text-primary'
+    id='portfolio-link'
   >
     Portfolio
   </a>
   <a
     href='/about'
-    class:list={[
-      'flex flex-1 justify-center rounded-lg p-3 font-medium text-primary',
-      {
-        'bg-light': isAbout
-      }
-    ]}
+    class='flex flex-1 justify-center rounded-lg p-3 font-medium text-primary'
+    id='about-link'
   >
     About
   </a>
 </div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const portfolioLink = document.getElementById('portfolio-link')
+    const aboutLink = document.getElementById('about-link')
+
+    if (window.location.pathname === portfolioLink?.getAttribute('href')) {
+      portfolioLink.classList.add('bg-light')
+    }
+
+    if (window.location.pathname === aboutLink?.getAttribute('href')) {
+      aboutLink.classList.add('bg-light')
+    }
+  })
+</script>
