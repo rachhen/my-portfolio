@@ -7,6 +7,13 @@ const projects = await getCollection('projects')
 ---
 
 <Layout title='Rachhen'>
+  <div class='mb-4 flex flex-col items-center justify-center'>
+    <h1 class='mb-2 text-4xl font-bold'>Projects</h1>
+    <p class='text-neutral-700'>
+      Here are a few of my previous projects that I've either collaborated on or
+      maintained
+    </p>
+  </div>
   <div class='grid gap-5 md:grid-cols-2'>
     {
       projects.map((item) => (
