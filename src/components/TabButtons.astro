@@ -24,6 +24,10 @@
       portfolioLink.classList.add('bg-light')
     }
 
+    if (window.location.pathname.includes('/projects/')) {
+      portfolioLink.classList.add('bg-light')
+    }
+
     if (window.location.pathname === aboutLink?.getAttribute('href')) {
       aboutLink.classList.add('bg-light')
     }

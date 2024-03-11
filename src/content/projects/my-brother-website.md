@@ -5,4 +5,6 @@ imageUrl: '/my-brother-website.png'
 canonicalURL: 'https://bong-thy.vercel.app/'
 ---
 
-<h2>Hii</h2>
+This project I built website for my brother. I used Astro, Tailwind CSS, and Contentful.
+
+You can check deno [here](https://bong-thy.vercel.app/)

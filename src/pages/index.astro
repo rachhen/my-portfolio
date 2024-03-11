@@ -18,7 +18,7 @@ const projects = await getCollection('projects')
     {
       projects.map((item) => (
         <ProjectCard
-          href={item.data.canonicalURL ?? '#'}
+          href={`/projects/${item.slug}`}
           title={item.data.title}
           imageUrl={item.data.imageUrl}
           tags={item.data.tags}

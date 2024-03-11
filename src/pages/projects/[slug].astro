@@ -1,0 +1,28 @@
+---
+import { getCollection } from 'astro:content'
+import Layout from '../../layouts/Layout.astro'
+
+export async function getStaticPaths() {
+  const projects = await getCollection('projects')
+
+  return projects.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry }
+  }))
+}
+
+const { entry } = Astro.props
+const { Content } = await entry.render()
+---
+
+<Layout title='Rachhen'>
+  <img
+    class='h-96 w-full rounded-t-lg object-cover'
+    src={entry.data.imageUrl}
+    alt={entry.data.title}
+  />
+  <h1 class='mb-4 mt-7 text-3xl font-semibold'>{entry.data.title}</h1>
+  <div class='prose lg:prose-lg'>
+    <Content />
+  </div>
+</Layout>
