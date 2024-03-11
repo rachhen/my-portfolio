@@ -15,7 +15,7 @@ const { entry } = Astro.props
 const { Content } = await entry.render()
 ---
 
-<Layout title='Rachhen'>
+<Layout title={`${entry.data.title} | Rachhen`}>
   <img
     class='h-96 w-full rounded-t-lg object-cover'
     src={entry.data.imageUrl}
